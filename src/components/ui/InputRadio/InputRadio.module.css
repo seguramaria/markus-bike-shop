@@ -1,0 +1,32 @@
+.radioButton {
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.radioButton input[type="radio"] {
+  display: none;
+}
+
+.customRadioContainer {
+  padding: 0.25rem;
+  border: 2px solid transparent;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.customRadioContainer:hover {
+  border: 2px solid var(--border-grey);
+}
+
+.radioButton .customRadio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  display: inline-block;
+  transition: border-color 0.3s ease;
+}
+
+.radioButton input[type="radio"]:checked + .customRadioContainer {
+  border-color: var(--action-border-secondary);
+}
