@@ -1,5 +1,5 @@
 import React from "react";
-import "./Select.css";
+import styles from "./Select.module.css";
 
 type Option = {
   value: string;
@@ -17,10 +17,10 @@ export function Select({ label, options, value, onChange }: SelectProps) {
   const hasValue = value !== "";
 
   return (
-    <div className="select-container">
+    <div className={styles.selectContainer}>
       <select
         name={label}
-        className={`select ${hasValue ? "has-value" : ""}`}
+        className={`${styles.select} ${hasValue ? styles.hasValue : ""}`}
         value={value}
         onChange={onChange}
       >
@@ -31,7 +31,7 @@ export function Select({ label, options, value, onChange }: SelectProps) {
           </option>
         ))}
       </select>
-      {hasValue && <label className="select-label">{label}</label>}
+      {hasValue && <label className={styles.selectLabel}>{label}</label>}
     </div>
   );
 }

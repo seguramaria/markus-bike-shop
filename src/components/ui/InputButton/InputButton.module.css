@@ -1,4 +1,4 @@
-.input-button {
+.inputButton {
   width: 100%;
   background-color: var(--action-bg-secondary);
   color: var(--text-primary);
@@ -9,10 +9,10 @@
   transition: background-color 0.3s ease;
 }
 
-.input-button:hover {
+.inputButton:hover {
   background-color: var(--action-bg-secondary-hover);
 }
 
-.input-button.selected {
+.inputButton.selected {
   border: 1px solid var(--text-secondary);
 }

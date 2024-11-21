@@ -1,4 +1,4 @@
-import classes from "./InputRadio.module.css";
+import styles from "./InputRadio.module.css";
 
 type InputRadioProps = {
   color: string;
@@ -14,16 +14,16 @@ export const InputRadio = ({
   onChange,
 }: InputRadioProps) => {
   return (
-    <label className={classes.radioButton}>
+    <label className={styles.radioButton}>
       <input
         type="radio"
         value={value}
         checked={checked}
         onChange={() => onChange(value)}
       />
-      <div className={classes.customRadioContainer}>
+      <div className={styles.customRadioContainer}>
         <span
-          className={classes.customRadio}
+          className={styles.customRadio}
           style={{ backgroundColor: color }}
         />
       </div>

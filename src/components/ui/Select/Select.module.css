@@ -1,4 +1,4 @@
-.select-container {
+.selectContainer {
   width: 100%;
   position: relative;
   display: flex;
@@ -20,7 +20,7 @@
   border-color: var(--text-secondary);
 }
 
-.select-label {
+.selectLabel {
   position: absolute;
   left: 1rem;
   top: 0.5rem;
@@ -29,7 +29,7 @@
   pointer-events: none;
 }
 
-.select.has-value {
+.select.hasValue {
   padding-top: 1.5rem;
   padding-bottom: 0.5rem;
   color: var(--text-primary);

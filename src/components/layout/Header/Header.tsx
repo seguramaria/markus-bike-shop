@@ -1,10 +1,10 @@
-import "./Header.css";
+import styles from "./Header.module.css";
 
 export const Header = () => {
   return (
-    <header className="header">
-      <button className="logo-button">
-        <img className="logo" src="./icons/logo-full.svg" />
+    <header className={styles.header}>
+      <button className={styles.logoButton}>
+        <img className={styles.logo} src="./icons/logo-full.svg" />
       </button>
     </header>
   );

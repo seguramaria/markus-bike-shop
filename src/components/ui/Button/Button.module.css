@@ -6,24 +6,24 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.button-primary {
+.primary {
   background-color: var(--action-bg-primary);
   color: var(--action-text-primary);
   border: 1px solid var(--action-border-primary);
 }
 
-.button-primary:hover {
+.primary:hover {
   background-color: var(--action-bg-primary-hover);
   border-color: var(--action-border-primary-hover);
 }
 
-.button-secondary {
+.secondary {
   background-color: var(--action-bg-secondary);
   color: var(--action-text-secondary);
   border: 2px solid var(--action-border-secondary);
 }
 
-.button-secondary:hover {
+.secondary:hover {
   background-color: var(--action-bg-secondary-hover);
   border-color: var(--action-border-secondary-hover);
 }

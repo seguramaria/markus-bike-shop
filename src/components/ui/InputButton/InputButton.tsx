@@ -1,21 +1,23 @@
-import "./InputButton.css";
+import styles from "./InputButton.module.css";
 
-type InputButtonGroupProps = {
+type InputButtonProps = {
   value: string;
   title: string;
   selectedValue: string;
   onSelect: (value: string) => void;
 };
 
-export const InputButtonGroup = ({
+export const InputButton = ({
   value,
   title,
   selectedValue,
   onSelect,
-}: InputButtonGroupProps) => {
+}: InputButtonProps) => {
   return (
     <button
-      className={`input-button ${selectedValue === value ? "selected" : ""}`}
+      className={`${styles.inputButton} ${
+        selectedValue === value ? styles.selected : ""
+      }`}
       onClick={() => onSelect(value)}
     >
       {title}

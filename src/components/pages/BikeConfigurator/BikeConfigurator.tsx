@@ -1,14 +1,12 @@
-import "./BikeConfigurator.css";
+import styles from "./BikeConfigurator.module.css";
 
 export const BikeConfigurator = () => {
   return (
-    <div className="configurator-container">
-      <h1 className="configurator-title">Dessing Your Bike</h1>
-      <div className="configurator-product">
-        <div className="configurator-section">{/* Section 1: Images */}</div>
-        <div className="configurator-section">
-          {/* Section 2:  Design options*/}
-        </div>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Dessing Your Bike</h1>
+      <div className={styles.product}>
+        <div className={styles.section}>{/* Section 1: Images */}</div>
+        <div className={styles.section}>{/* Section 2:  Design options*/}</div>
       </div>
     </div>
   );
