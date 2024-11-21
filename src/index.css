@@ -1,4 +1,27 @@
 :root {
+  /* Text Colors */
+  --text-primary: #25253d;
+  --text-secondary: #007c85;
+
+  /* Background Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
+
+  /* Action Colors */
+  --action-bg-primary: #db003a;
+  --action-bg-primary-hover: #ff355e;
+  --action-border-primary: #db003a;
+  --action-border-primary-hover: #ff355e;
+  --action-text-primary: #ffff;
+
+  --action-bg-secondary: #ffff;
+  --action-bg-secondary-hover: #25253d0d;
+  --action-border-secondary: #25253d;
+  --action-border-secondary-hover: #25253d;
+  --action-text-secondary: #25253d;
+}
+
+:root {
   margin: 0;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
