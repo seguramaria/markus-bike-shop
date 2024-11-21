@@ -2,10 +2,14 @@
   /* Text Colors */
   --text-primary: #25253d;
   --text-secondary: #007c85;
+  --text-disabled: #7c7c8b;
 
   /* Background Colors */
   --bg-primary: #ffffff;
   --bg-secondary: #f3f4f6;
+
+  /* Border Colors */
+  --border-grey: #d3d3d8;
 
   /* Action Colors */
   --action-bg-primary: #db003a;

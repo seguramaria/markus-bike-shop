@@ -1,0 +1,37 @@
+.select-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.select {
+  height: 56px;
+  padding: 1rem;
+  padding-right: 2rem;
+  border: 1px solid var(--border-grey);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: white;
+  color: var(--text-disabled);
+  transition: border-color 0.3s;
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--text-secondary);
+}
+
+.select-label {
+  position: absolute;
+  left: 1rem;
+  top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.select.has-value {
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+  color: var(--text-primary);
+}
