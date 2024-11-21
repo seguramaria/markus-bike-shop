@@ -1,0 +1,18 @@
+.input-button {
+  width: 100%;
+  background-color: var(--action-bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-grey);
+  border-radius: 0.25rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-button:hover {
+  background-color: var(--action-bg-secondary-hover);
+}
+
+.input-button.selected {
+  border: 1px solid var(--text-secondary);
+}
