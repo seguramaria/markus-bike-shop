@@ -7,8 +7,6 @@
 
 .select {
   height: 56px;
-  padding: 1rem;
-  padding-right: 2rem;
   border: 1px solid var(--border-grey);
   border-radius: 0.5rem;
   font-size: 1rem;
@@ -28,6 +26,7 @@
   top: 0.5rem;
   font-size: 0.75rem;
   color: var(--text-secondary);
+  pointer-events: none;
 }
 
 .select.has-value {
