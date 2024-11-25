@@ -6,19 +6,10 @@
   padding: 3rem;
   padding-top: 70px;
   min-height: calc(100vh - 197px);
+  max-width: 1280px;
 }
 
-.total {
-  width: 100%;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.formActions {
+.actions {
   width: 100%;
   display: flex;
   gap: 1rem;
@@ -28,4 +19,47 @@
 
 .link {
   width: 100%;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.bikeDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 1rem;
+  max-width: 1108px;
+  margin: 0 auto;
+}
+
+.details {
+  margin: 0 0 1rem 0;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border-grey);
+}
+
+.details:last-child {
+  border-bottom: none;
+}
+
+.detailTitle {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.detailSubtitle {
+  color: var(--text-primary);
 }
