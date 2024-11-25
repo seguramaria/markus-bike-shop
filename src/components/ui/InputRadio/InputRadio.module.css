@@ -13,20 +13,46 @@
   border-radius: 0.25rem;
   display: flex;
   align-items: center;
+  transition: border-color 0.3s ease;
 }
 
 .customRadioContainer:hover {
-  border: 2px solid var(--border-grey);
+  border-color: var(--border-grey);
 }
 
-.radioButton .customRadio {
+.radioButtonDisabled {
+  cursor: not-allowed;
+}
+
+.radioButtonDisabled .customRadioContainer:hover {
+  border-color: transparent;
+}
+
+.customRadio {
   width: 20px;
   height: 20px;
   border: 2px solid transparent;
   display: inline-block;
+  position: relative;
   transition: border-color 0.3s ease;
 }
 
 .radioButton input[type="radio"]:checked + .customRadioContainer {
   border-color: var(--text-secondary);
+}
+
+.radioButtonDisabled .customRadio::before,
+.radioButtonDisabled .customRadio::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--border-grey);
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.radioButtonDisabled .customRadio::after {
+  transform: translateY(-50%) rotate(-45deg);
 }

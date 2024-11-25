@@ -13,6 +13,24 @@ export const BikeConfigurator = () => {
     bikeData,
   } = useBikeConfigurator();
 
+  const wheelsWithOptionsDisabled = bikeData.wheels.map((wheel) => ({
+    ...wheel,
+    disabled: bikeConfig.frameType
+      ? !bikeData.frames
+          .find((frame) => frame.type === bikeConfig.frameType)
+          ?.compatibleWheels.includes(wheel.type)
+      : false,
+  }));
+
+  const rimsWithOptionsDisabled = bikeData.rims.map((rim) => ({
+    ...rim,
+    disabled: bikeConfig.wheelType
+      ? !bikeData.wheels
+          .find((wheel) => wheel.type === bikeConfig.wheelType)
+          ?.compatibleRims.includes(rim.type)
+      : false,
+  }));
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Design Your Bike</h1>
@@ -28,7 +46,11 @@ export const BikeConfigurator = () => {
                 label: frame.label,
               })),
               value: bikeConfig.frameType,
-              onChange: (e) => updateConfig("frameType", e.target.value),
+              onChange: (e) => {
+                updateConfig("frameType", e.target.value);
+                updateConfig("wheelType", "");
+                updateConfig("rimColor", "");
+              },
             }}
             button={{
               options: bikeData.finishes.map((finish) => ({
@@ -44,17 +66,22 @@ export const BikeConfigurator = () => {
             title="Wheels"
             select={{
               label: "Select Wheel Type",
-              options: bikeData.wheels.map((wheel) => ({
+              options: wheelsWithOptionsDisabled.map((wheel) => ({
                 value: wheel.type,
                 label: wheel.label,
+                disabled: wheel.disabled,
               })),
               value: bikeConfig.wheelType,
-              onChange: (e) => updateConfig("wheelType", e.target.value),
+              onChange: (e) => {
+                updateConfig("wheelType", e.target.value);
+                updateConfig("rimColor", "");
+              },
             }}
             radio={{
-              options: bikeData.rims.map((rim) => ({
+              options: rimsWithOptionsDisabled.map((rim) => ({
                 value: rim.type,
                 label: rim.label,
+                disabled: rim.disabled,
               })),
               value: bikeConfig.rimColor,
               onChange: (value) => updateConfig("rimColor", value),

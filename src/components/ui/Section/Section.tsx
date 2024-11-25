@@ -1,10 +1,9 @@
-import React from "react";
 import { InputButton } from "../InputButton/InputButton";
 import { InputRadio } from "../InputRadio/InputRadio";
 import { Select } from "../Select/Select";
 import styles from "./Section.module.css";
 
-type Option = { value: string; label: string };
+type Option = { value: string; label: string; disabled?: boolean };
 
 type SectionProps = {
   title: string;
@@ -49,6 +48,7 @@ export const Section = ({ title, select, radio, button }: SectionProps) => {
               color={option.value}
               checked={radio.value === option.value}
               onChange={radio.onChange}
+              disabled={option.disabled}
             />
           ))}
         </div>
@@ -63,6 +63,7 @@ export const Section = ({ title, select, radio, button }: SectionProps) => {
               title={option.label}
               selectedValue={button.value}
               onSelect={button.onSelect}
+              disabled={option.disabled}
             />
           ))}
         </div>

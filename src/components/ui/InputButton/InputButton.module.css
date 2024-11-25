@@ -4,17 +4,22 @@
   color: var(--text-primary);
   border: 1px solid var(--border-grey);
   border-radius: 0.25rem;
-  padding: 1rem;
+  padding: 0.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 0.75rem;
   font-weight: 400;
 }
 
-.inputButton:hover {
-  background-color: var(--action-bg-secondary-hover);
+.inputButton:hover:not(:disabled) {
+  border: 1px solid var(--action-border-secondary-hover);
 }
 
 .inputButton.selected {
   border: 1px solid var(--text-secondary);
+}
+
+.inputButton:disabled {
+  background-color: var(--action-bg-secondary-hover);
+  cursor: not-allowed;
 }

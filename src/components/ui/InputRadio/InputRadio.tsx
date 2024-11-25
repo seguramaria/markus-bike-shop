@@ -5,6 +5,7 @@ type InputRadioProps = {
   value: string;
   checked: boolean;
   onChange: (value: string) => void;
+  disabled?: boolean;
 };
 
 export const InputRadio = ({
@@ -12,16 +13,26 @@ export const InputRadio = ({
   value,
   checked,
   onChange,
+  disabled,
 }: InputRadioProps) => {
   return (
-    <label className={styles.radioButton}>
+    <label
+      className={`${styles.radioButton} ${
+        disabled && styles.radioButtonDisabled
+      }`}
+    >
       <input
+        disabled={disabled}
         type="radio"
         value={value}
         checked={checked}
         onChange={() => onChange(value)}
       />
-      <div className={styles.customRadioContainer}>
+      <div
+        className={`${styles.customRadioContainer} ${
+          disabled && styles.customRadioDisabled
+        }`}
+      >
         <span
           className={styles.customRadio}
           style={{ backgroundColor: color }}
