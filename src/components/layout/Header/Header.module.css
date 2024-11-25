@@ -2,11 +2,19 @@
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   border-bottom: 1px solid var(--bg-secondary);
   position: fixed;
   background-color: white;
   height: 70px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logoButton {
@@ -16,4 +24,21 @@
 
 .logo {
   width: 100%;
+}
+
+.shoppingCartButton {
+  width: 120px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+
+.shoppingCart {
+  border-radius: 50%;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+}
+
+.shoppingCart:hover {
+  border: 1px solid var(--border-grey);
 }

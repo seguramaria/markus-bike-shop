@@ -5,55 +5,70 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 export const Checkout = () => {
-  const { bikeConfig, totalPrice } = useContext(BikeConfigContext);
+  const { bikeConfig, totalPrice, isFormValid } = useContext(BikeConfigContext);
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Order Details</h1>
-      <div className={styles.bikeDetails}>
-        <div className={styles.images}>
-          <img
-            src={`img/bikes/bike_${bikeConfig.frameFinish || "matte"}.png`}
-            alt={`Bike with ${bikeConfig.frameFinish || "matte"} finish`}
-            className={styles.bikeImage}
-          />
-        </div>
-        <div className={styles.summary}>
-          <div className={styles.details}>
-            <p className={styles.detailTitle}>Frame Type: </p>
-            <p className={styles.detailSubtitle}> {bikeConfig.frameType}</p>
+      {isFormValid ? (
+        <>
+          <h1 className={styles.title}>This is your bike</h1>
+          <div className={styles.bikeDetails}>
+            <div className={styles.images}>
+              <img
+                src={`img/bikes/bike_${bikeConfig.frameFinish || "matte"}.png`}
+                alt={`Bike with ${bikeConfig.frameFinish || "matte"} finish`}
+                className={styles.bikeImage}
+              />
+            </div>
+            <div className={styles.summary}>
+              <div className={styles.details}>
+                <p className={styles.detailTitle}>Frame Type: </p>
+                <p className={styles.detailSubtitle}> {bikeConfig.frameType}</p>
+              </div>
+              <div className={styles.details}>
+                <p className={styles.detailTitle}>Frame Finish:</p>
+                <p className={styles.detailSubtitle}>
+                  {bikeConfig.frameFinish}
+                </p>
+              </div>
+              <div className={styles.details}>
+                <p className={styles.detailTitle}>Wheel Type: </p>
+                <p className={styles.detailSubtitle}> {bikeConfig.wheelType}</p>
+              </div>
+              <div className={styles.details}>
+                <p className={styles.detailTitle}>Rim Color: </p>
+                <p className={styles.detailSubtitle}> {bikeConfig.rimColor}</p>
+              </div>
+              <div className={styles.details}>
+                <p className={styles.detailTitle}>Chain Type: </p>
+                <p className={styles.detailSubtitle}>{bikeConfig.chainType}</p>
+              </div>
+              <div className={styles.details}>
+                <p className={styles.detailTitle}>Total: </p>
+                <p className={styles.detailSubtitle}>${totalPrice}</p>
+              </div>
+            </div>
           </div>
-          <div className={styles.details}>
-            <p className={styles.detailTitle}>Frame Finish:</p>
-            <p className={styles.detailSubtitle}>{bikeConfig.frameFinish}</p>
-          </div>
-          <div className={styles.details}>
-            <p className={styles.detailTitle}>Wheel Type: </p>
-            <p className={styles.detailSubtitle}> {bikeConfig.wheelType}</p>
-          </div>
-          <div className={styles.details}>
-            <p className={styles.detailTitle}>Rim Color: </p>
-            <p className={styles.detailSubtitle}> {bikeConfig.rimColor}</p>
-          </div>
-          <div className={styles.details}>
-            <p className={styles.detailTitle}>Chain Type: </p>
-            <p className={styles.detailSubtitle}> {bikeConfig.chainType} </p>
-          </div>
-          <div className={styles.details}>
-            <p className={styles.detailTitle}>Total: </p>
-            <p className={styles.detailSubtitle}>${totalPrice}</p>
-          </div>
-        </div>
-      </div>
 
-      <div className={styles.actions}>
-        <Link to="/bike-configurator" className={styles.link}>
-          <Button type="reset" variant="secondary">
-            Edit
-          </Button>
-        </Link>
-        <Button onClick={() => console.log("PLace order")}>Submit</Button>
-      </div>
+          <div className={styles.actions}>
+            <Link to="/bike-configurator" className={styles.link}>
+              <Button type="reset" variant="secondary">
+                Edit
+              </Button>
+            </Link>
+            <Button onClick={() => console.log("PLace order")}>Submit</Button>
+          </div>
+        </>
+      ) : (
+        <div className={styles.container}>
+          <h1 className={styles.title}>You haven't customized your bike yet</h1>
+          <div className={styles.actions}>
+            <Link to="/bike-configurator" className={styles.link}>
+              <Button>Go for it!</Button>
+            </Link>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

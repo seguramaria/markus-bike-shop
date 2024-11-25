@@ -5,6 +5,7 @@ import { Footer } from "@layout/Footer/Footer";
 import { Header } from "@layout/Header/Header";
 import { BikeConfigurator } from "@pages/BikeConfigurator/BikeConfigurator";
 import { Checkout } from "@pages/Checkout/Checkout";
+import { Home } from "@pages/Home/Home";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Header />
         <main className={styles.appWrapper}>
           <Routes>
-            <Route path="/" element={<BikeConfigurator />} />
+            <Route path="/" element={<Home />} />
             <Route path="/bike-configurator" element={<BikeConfigurator />} />
             <Route path="/checkout" element={<Checkout />} />
           </Routes>
