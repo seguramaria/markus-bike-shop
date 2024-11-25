@@ -38,7 +38,13 @@ export const BikeConfigurator = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Design Your Bike</h1>
       <div className={styles.configurator}>
-        <div className={styles.images}>{/* Section 1: Images */}</div>
+        <div className={styles.images}>
+          <img
+            src={`img/bikes/bike_${bikeConfig.frameFinish || "matte"}.png`}
+            alt={`Bike with ${bikeConfig.frameFinish || "matte"} finish`}
+            className={styles.bikeImage}
+          />
+        </div>
         <form className={styles.form} onSubmit={handleSubmit}>
           <Section
             title="Frame"

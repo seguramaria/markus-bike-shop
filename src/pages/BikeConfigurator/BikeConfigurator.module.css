@@ -20,7 +20,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .section {
@@ -29,10 +29,17 @@
 }
 
 .images {
-  width: 100%;
-  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
 }
 
+.bikeImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
 .form {
   width: 100%;
   display: flex;
@@ -72,7 +79,6 @@
 @media (min-width: 1024px) {
   .configurator {
     flex-direction: row;
-    align-items: flex-start;
     justify-content: flex-start;
   }
 
