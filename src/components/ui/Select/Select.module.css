@@ -34,3 +34,8 @@
   padding-bottom: 0.5rem;
   color: var(--text-primary);
 }
+
+.select option:disabled {
+  background-color: var(--action-bg-secondary-disabled);
+  color: var(--action-text-secondary-disabled);
+}

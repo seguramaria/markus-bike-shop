@@ -28,9 +28,9 @@
   --action-border-primary-disabled: #f8b3c1;
   --action-text-primary-disabled: #ffffff;
 
-  --action-bg-secondary-disabled: #f3f4f6;
+  --action-bg-secondary-disabled: #f0f0f0;
   --action-border-secondary-disabled: #d3d3d8;
-  --action-text-secondary-disabled: #7c7c8b;
+  --action-text-secondary-disabled: #a0a0a0;
 }
 
 :root {
