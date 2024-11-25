@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { bikeData } from "../data/bikeData";
+import { bikeData } from "@data/bikeData";
 
 export const useBikeConfigurator = () => {
   const [bikeConfig, setBikeConfig] = useState({

@@ -1,7 +1,7 @@
 import styles from "./BikeConfigurator.module.css";
-import { Section } from "../../ui/Section/Section";
-import { useBikeConfigurator } from "../../../hooks/useBikeConfigurator";
-import { Button } from "../../ui/Button/Button";
+import { Section } from "@ui/Section/Section";
+import { useBikeConfigurator } from "@hooks/useBikeConfigurator";
+import { Button } from "@ui/Button/Button";
 
 export const BikeConfigurator = () => {
   const {
