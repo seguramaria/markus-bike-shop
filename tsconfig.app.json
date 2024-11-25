@@ -13,7 +13,7 @@
       "@data/*": ["data/*"],
       "@hooks/*": ["hooks/*"],
       "@layout/*": ["components/layout/*"],
-      "@pages/*": ["components/pages/*"],
+      "@pages/*": ["pages/*"],
       "@ui/*": ["components/ui/*"]
     },
 

@@ -48,7 +48,6 @@
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 1rem;
-
   margin-bottom: 1.5rem;
 }
 
@@ -58,6 +57,10 @@
   gap: 1rem;
   align-items: center;
   justify-content: center;
+}
+
+.link {
+  width: 100%;
 }
 
 @media (min-width: 768px) {

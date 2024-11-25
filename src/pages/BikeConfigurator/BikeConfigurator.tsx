@@ -4,6 +4,7 @@ import { Button } from "@ui/Button/Button";
 import { useContext } from "react";
 import { bikeData } from "@data/bikeData";
 import { BikeConfigContext } from "@context/BikeConfigContext";
+import { Link } from "react-router-dom";
 
 export const BikeConfigurator = () => {
   const {
@@ -108,9 +109,11 @@ export const BikeConfigurator = () => {
             <Button type="reset" variant="secondary" onClick={handleReset}>
               Reset
             </Button>
-            <Button type="submit" disabled={!isFormValid}>
-              Go to checkout
-            </Button>
+            <Link to="/checkout" className={styles.link}>
+              <Button type="submit" disabled={!isFormValid}>
+                Go to checkout
+              </Button>
+            </Link>
           </div>
         </form>
       </div>
