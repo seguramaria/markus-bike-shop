@@ -2,6 +2,7 @@ type Finish = {
   id: string;
   type: string;
   label: string;
+  price: { [key: string]: number };
 };
 
 type Wheel = {
@@ -32,9 +33,6 @@ type Frame = {
   label: string;
   price: number;
   compatibleWheels: string[];
-  finishPrices: {
-    [key: string]: number;
-  };
 };
 
 export type BikeData = {

@@ -8,10 +8,6 @@ export const bikeData: BikeData = {
       label: "Full suspension",
       price: 130,
       compatibleWheels: ["mountain", "fat"],
-      finishPrices: {
-        matte: 30,
-        shiny: 50,
-      },
     },
     {
       id: "2Diam",
@@ -19,10 +15,6 @@ export const bikeData: BikeData = {
       label: "Diamond",
       price: 110,
       compatibleWheels: ["road", "mountain"],
-      finishPrices: {
-        matte: 20,
-        shiny: 35,
-      },
     },
     {
       id: "3Step",
@@ -30,10 +22,6 @@ export const bikeData: BikeData = {
       label: "Step through",
       price: 100,
       compatibleWheels: ["road"],
-      finishPrices: {
-        matte: 10,
-        shiny: 30,
-      },
     },
   ],
   finishes: [
@@ -41,11 +29,21 @@ export const bikeData: BikeData = {
       id: "1Matt",
       type: "matte",
       label: "Matte",
+      price: {
+        "full-suspension": 30,
+        diamond: 20,
+        "step-through": 100,
+      },
     },
     {
       id: "2Shin",
       type: "shiny",
       label: "Shiny",
+      price: {
+        "full-suspension": 50,
+        diamond: 35,
+        "step-through": 30,
+      },
     },
   ],
   wheels: [
