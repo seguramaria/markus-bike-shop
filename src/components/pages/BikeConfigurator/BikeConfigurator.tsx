@@ -20,7 +20,7 @@ export const BikeConfigurator = () => {
         <div className={styles.section}>{/* Section 1: Images */}</div>
         <form className={styles.form} onSubmit={handleSubmit}>
           <Section
-            title="Frames"
+            title="Frame"
             select={{
               label: "Select Frame",
               options: bikeData.frames.map((frame) => ({
@@ -59,13 +59,17 @@ export const BikeConfigurator = () => {
               value: bikeConfig.rimColor,
               onChange: (value) => updateConfig("rimColor", value),
             }}
-            button={{
+          />
+          <Section
+            title="Chain"
+            select={{
+              label: "Select Chain Type",
               options: bikeData.chains.map((chain) => ({
                 value: chain.type,
                 label: chain.label,
               })),
               value: bikeConfig.chainType,
-              onSelect: (value) => updateConfig("chainType", value),
+              onChange: (e) => updateConfig("chainType", e.target.value),
             }}
           />
           <div className={styles.formActions}>

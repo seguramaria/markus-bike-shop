@@ -1,4 +1,6 @@
-export const bikeData = {
+import { BikeData } from "types";
+
+export const bikeData: BikeData = {
   frames: [
     {
       id: "1Full",
