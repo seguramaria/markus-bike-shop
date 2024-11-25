@@ -1,25 +1,106 @@
 export const bikeData = {
   frames: [
-    { type: "full-suspension", label: "Full suspension", price: 130 },
-    { type: "diamond", label: "Diamond", price: 110 },
-    { type: "step-through", label: "Step through", price: 100 },
+    {
+      id: "1Full",
+      type: "full-suspension",
+      label: "Full suspension",
+      price: 130,
+      compatibleWheels: ["mountain", "fat"],
+      finishPrices: {
+        matte: 30,
+        shiny: 50,
+      },
+    },
+    {
+      id: "2Diam",
+      type: "diamond",
+      label: "Diamond",
+      price: 110,
+      compatibleWheels: ["road", "mountain"],
+      finishPrices: {
+        matte: 20,
+        shiny: 35,
+      },
+    },
+    {
+      id: "3Step",
+      type: "step-through",
+      label: "Step through",
+      price: 100,
+      compatibleWheels: ["road"],
+      finishPrices: {
+        matte: 10,
+        shiny: 30,
+      },
+    },
   ],
   finishes: [
-    { type: "matte", label: "Matte", price: 20 },
-    { type: "shiny", label: "Shiny", price: 30 },
+    {
+      id: "1Matt",
+      type: "matte",
+      label: "Matte",
+    },
+    {
+      id: "2Shin",
+      type: "shiny",
+      label: "Shiny",
+    },
   ],
   wheels: [
-    { type: "road", label: "Road wheels", price: 80 },
-    { type: "mountain", label: "Mountain wheels", price: 100 },
-    { type: "fat", label: "Fat bike wheels", price: 120 },
+    {
+      id: "1Road",
+      type: "road",
+      label: "Road wheels",
+      price: 80,
+      compatibleRims: ["red", "black", "blue"],
+    },
+    {
+      id: "2Mount",
+      type: "mountain",
+      label: "Mountain wheels",
+      price: 100,
+      compatibleRims: ["black", "blue"],
+    },
+    {
+      id: "3Fat",
+      type: "fat",
+      label: "Fat bike wheels",
+      price: 120,
+      compatibleRims: ["black", "blue"],
+    },
   ],
   rims: [
-    { type: "red", label: "Red", price: 15 },
-    { type: "black", label: "Black", price: 10 },
-    { type: "blue", label: "Blue", price: 20 },
+    {
+      id: "1Red",
+      type: "red",
+      label: "Red",
+      price: 15,
+    },
+    {
+      id: "2Black",
+      type: "black",
+      label: "Black",
+      price: 10,
+    },
+    {
+      id: "3Blue",
+      type: "blue",
+      label: "Blue",
+      price: 20,
+    },
   ],
   chains: [
-    { type: "single-speed", label: "Single-speed", price: 43 },
-    { type: "8-speed", label: "8-speed", price: 60 },
+    {
+      id: "1Single",
+      type: "single-speed",
+      label: "Single-speed chain",
+      price: 43,
+    },
+    {
+      id: "2Eight",
+      type: "8-speed",
+      label: "8-speed chain",
+      price: 60,
+    },
   ],
 };
