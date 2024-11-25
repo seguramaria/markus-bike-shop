@@ -6,15 +6,23 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .primary {
   background-color: var(--action-bg-primary);
   color: var(--action-text-primary);
   border: 1px solid var(--action-border-primary);
 }
 
-.primary:hover {
+.primary:hover:not(:disabled) {
   background-color: var(--action-bg-primary-hover);
   border-color: var(--action-border-primary-hover);
+}
+
+.primary:disabled {
+  background-color: var(--action-bg-primary-disabled);
+  color: var(--action-text-primary-disabled);
+  border-color: var(--action-border-primary-disabled);
+  cursor: not-allowed;
 }
 
 .secondary {
@@ -23,7 +31,14 @@
   border: 2px solid var(--action-border-secondary);
 }
 
-.secondary:hover {
+.secondary:hover:not(:disabled) {
   background-color: var(--action-bg-secondary-hover);
   border-color: var(--action-border-secondary-hover);
+}
+
+.secondary:disabled {
+  background-color: var(--action-bg-secondary-disabled);
+  color: var(--action-text-secondary-disabled);
+  border-color: var(--action-border-secondary-disabled);
+  cursor: not-allowed;
 }

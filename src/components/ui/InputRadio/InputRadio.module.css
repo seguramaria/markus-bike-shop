@@ -28,5 +28,5 @@
 }
 
 .radioButton input[type="radio"]:checked + .customRadioContainer {
-  border-color: var(--action-border-secondary);
+  border-color: var(--text-secondary);
 }

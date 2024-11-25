@@ -23,6 +23,14 @@
   --action-border-secondary: #25253d;
   --action-border-secondary-hover: #25253d;
   --action-text-secondary: #25253d;
+
+  --action-bg-primary-disabled: #f8b3c1;
+  --action-border-primary-disabled: #f8b3c1;
+  --action-text-primary-disabled: #ffffff;
+
+  --action-bg-secondary-disabled: #f3f4f6;
+  --action-border-secondary-disabled: #d3d3d8;
+  --action-text-secondary-disabled: #7c7c8b;
 }
 
 :root {

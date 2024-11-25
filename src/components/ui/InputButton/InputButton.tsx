@@ -15,6 +15,7 @@ export const InputButton = ({
 }: InputButtonProps) => {
   return (
     <button
+      type="button"
       className={`${styles.inputButton} ${
         selectedValue === value ? styles.selected : ""
       }`}
