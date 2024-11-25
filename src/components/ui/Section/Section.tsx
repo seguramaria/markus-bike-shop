@@ -28,7 +28,7 @@ type SectionProps = {
 export const Section = ({ title, select, radio, button }: SectionProps) => {
   return (
     <section className={styles.section}>
-      <h2>{title}</h2>
+      <h3 className={styles.title}>{title}</h3>
 
       {select && (
         <Select

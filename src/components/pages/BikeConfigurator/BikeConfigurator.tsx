@@ -11,6 +11,7 @@ export const BikeConfigurator = () => {
     handleSubmit,
     isFormValid,
     bikeData,
+    totalPrice,
   } = useBikeConfigurator();
 
   const wheelsWithOptionsDisabled = bikeData.wheels.map((wheel) => ({
@@ -34,8 +35,8 @@ export const BikeConfigurator = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Design Your Bike</h1>
-      <div className={styles.product}>
-        <div className={styles.section}>{/* Section 1: Images */}</div>
+      <div className={styles.configurator}>
+        <div className={styles.images}>{/* Section 1: Images */}</div>
         <form className={styles.form} onSubmit={handleSubmit}>
           <Section
             title="Frame"
@@ -99,12 +100,15 @@ export const BikeConfigurator = () => {
               onChange: (e) => updateConfig("chainType", e.target.value),
             }}
           />
+          <div className={styles.total}>
+            <h3>Total: </h3> <span>${totalPrice}</span>
+          </div>
           <div className={styles.formActions}>
             <Button type="reset" variant="secondary" onClick={handleReset}>
               Reset
             </Button>
             <Button type="submit" disabled={!isFormValid}>
-              Submit
+              Go to checkout
             </Button>
           </div>
         </form>

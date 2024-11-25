@@ -1,5 +1,10 @@
 .section {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.title {
+  margin-bottom: 1.5rem;
 }
 
 .radioGroup,
