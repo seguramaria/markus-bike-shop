@@ -9,6 +9,7 @@
     "baseUrl": "src",
     "paths": {
       "@components/*": ["components/*"],
+      "@context/*": ["context/*"],
       "@data/*": ["data/*"],
       "@hooks/*": ["hooks/*"],
       "@layout/*": ["components/layout/*"],

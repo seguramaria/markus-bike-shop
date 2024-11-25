@@ -1,7 +1,9 @@
 import styles from "./BikeConfigurator.module.css";
 import { Section } from "@ui/Section/Section";
-import { useBikeConfigurator } from "@hooks/useBikeConfigurator";
 import { Button } from "@ui/Button/Button";
+import { useContext } from "react";
+import { bikeData } from "@data/bikeData";
+import { BikeConfigContext } from "@context/BikeConfigContext";
 
 export const BikeConfigurator = () => {
   const {
@@ -10,9 +12,8 @@ export const BikeConfigurator = () => {
     handleReset,
     handleSubmit,
     isFormValid,
-    bikeData,
     totalPrice,
-  } = useBikeConfigurator();
+  } = useContext(BikeConfigContext);
 
   const wheelsWithOptionsDisabled = bikeData.wheels.map((wheel) => ({
     ...wheel,

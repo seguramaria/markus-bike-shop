@@ -6,6 +6,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@components": "/src/components",
+      "@context": "/src/context",
       "@data": "/src/data",
       "@hooks": "/src/hooks",
       "@layout": "/src/components/layout",

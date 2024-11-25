@@ -57,6 +57,5 @@ export const useBikeConfigurator = () => {
     handleReset,
     handleSubmit,
     isFormValid,
-    bikeData,
   };
 };
