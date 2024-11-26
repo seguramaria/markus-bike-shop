@@ -54,6 +54,15 @@ This would allow for a more complete image URL generation that includes all feat
 3. Backend Integration:
    Instead of using mock data for the submit action, I would integrate a real backend API to handle the submission of the configuration, allowing users to persist their bike configurations or even place an order. The backend API can be found in the Markus Bike Shop API repository.
 
+## 🛠️ Challenges & Learning
+
+When I started working on this project, I had no prior experience with Ruby on Rails, so I had to learn it from scratch to build the backend. Initially, I estimated that implementing the backend would be a simpler task compared to the frontend, but honestly, it turned out to be more challenging than I expected. 😅
+
+I faced several difficulties in getting the backend up and running, and unfortunately, it didn’t turn out quite as I had hoped. Despite this, I gained valuable experience working with Rails, and I’m motivated to continue learning and improving my skills in Ruby.
+
+I’ve learned a lot through the process, and I’m excited to keep improving in Ruby on Rails as I continue to grow as a developer. 😊
+
+
 ## 🚀 How to Run the Project
 
 1. Clone the repository:
