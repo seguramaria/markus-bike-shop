@@ -4,11 +4,13 @@ import { BikeConfig, Payload } from "types";
 type BikeConfigContextType = {
   bikeConfig: BikeConfig;
   totalPrice: number;
-  updateConfig: (field: string, value: string) => void;
+  updateConfig: (field: keyof BikeConfig, value: string) => void;
   handleReset: () => void;
   handleSubmit: () => void;
   isFormValid: boolean;
   orderDetails: Payload | null;
+  loading: boolean;
+  error: string | null;
 };
 
 const defaultContextValue: BikeConfigContextType = {
@@ -34,6 +36,8 @@ const defaultContextValue: BikeConfigContextType = {
     },
     totalPrice: 0,
   },
+  loading: false,
+  error: "",
 };
 
 export const BikeConfigContext =

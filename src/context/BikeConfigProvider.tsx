@@ -14,6 +14,8 @@ export const BikeConfigProvider = ({ children }: BikeConfigProviderProps) => {
     isFormValid,
     totalPrice,
     orderDetails,
+    loading,
+    error,
   } = useBikeConfigurator();
 
   return (
@@ -26,6 +28,8 @@ export const BikeConfigProvider = ({ children }: BikeConfigProviderProps) => {
         isFormValid,
         totalPrice,
         orderDetails,
+        loading,
+        error,
       }}
     >
       {children}

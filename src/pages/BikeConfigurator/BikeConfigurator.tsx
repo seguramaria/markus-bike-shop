@@ -11,8 +11,15 @@ import {
 } from "../../utils/incompatibilityUtil";
 
 export const BikeConfigurator = () => {
-  const { bikeConfig, updateConfig, handleReset, isFormValid, totalPrice } =
-    useContext(BikeConfigContext);
+  const {
+    bikeConfig,
+    updateConfig,
+    handleReset,
+    isFormValid,
+    totalPrice,
+    loading,
+    error,
+  } = useContext(BikeConfigContext);
 
   const wheelsWithOptionsDisabled = bikeData.features.wheels.map((wheel) => ({
     ...wheel,
@@ -28,6 +35,8 @@ export const BikeConfigurator = () => {
       : false,
   }));
 
+  if (loading) return <h3>Loading</h3>;
+  if (error) return <h3>{error}</h3>;
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Design Your Bike</h1>

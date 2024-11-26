@@ -37,7 +37,6 @@ export type BikeFeatureType = "frames" | "wheels" | "rims" | "chains";
 
 export type BikeFeatures = {
   frames: Frame[];
-  finishes: Finish[];
   wheels: Wheel[];
   rims: Rim[];
   chains: Chain[];
