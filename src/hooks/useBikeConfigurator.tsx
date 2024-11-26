@@ -1,8 +1,10 @@
 import { useState, useMemo } from "react";
 import { bikeData } from "@data/bikeData";
+import { BikeConfig, Payload } from "types";
 
 export const useBikeConfigurator = () => {
-  const [bikeConfig, setBikeConfig] = useState({
+  const [orderDetails, setOrderDetails] = useState<Payload | null>(null);
+  const [bikeConfig, setBikeConfig] = useState<BikeConfig>({
     frameType: "",
     frameFinish: "",
     wheelType: "",
@@ -43,9 +45,12 @@ export const useBikeConfigurator = () => {
     return framePrice + finishPrice + wheelPrice + rimPrice + chainPrice;
   }, [bikeConfig]);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form Data Submitted:", bikeConfig, totalPrice);
+  const handleSubmit = () => {
+    const payload = {
+      bikeConfig,
+      totalPrice,
+    };
+    setOrderDetails(payload);
   };
 
   const isFormValid = Object.values(bikeConfig).every((value) => value !== "");
@@ -57,5 +62,6 @@ export const useBikeConfigurator = () => {
     handleReset,
     handleSubmit,
     isFormValid,
+    orderDetails,
   };
 };

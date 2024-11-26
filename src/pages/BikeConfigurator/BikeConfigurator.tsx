@@ -7,14 +7,8 @@ import { BikeConfigContext } from "@context/BikeConfigContext";
 import { Link } from "react-router-dom";
 
 export const BikeConfigurator = () => {
-  const {
-    bikeConfig,
-    updateConfig,
-    handleReset,
-    handleSubmit,
-    isFormValid,
-    totalPrice,
-  } = useContext(BikeConfigContext);
+  const { bikeConfig, updateConfig, handleReset, isFormValid, totalPrice } =
+    useContext(BikeConfigContext);
 
   const wheelsWithOptionsDisabled = bikeData.wheels.map((wheel) => ({
     ...wheel,
@@ -45,7 +39,7 @@ export const BikeConfigurator = () => {
             className={styles.bikeImage}
           />
         </div>
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form className={styles.form}>
           <Section
             title="Frame"
             select={{

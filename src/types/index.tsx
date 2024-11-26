@@ -42,3 +42,16 @@ export type BikeData = {
   rims: Rim[];
   chains: Chain[];
 };
+
+export type BikeConfig = {
+  frameType: string;
+  frameFinish: string;
+  wheelType: string;
+  rimColor: string;
+  chainType: string;
+};
+
+export type Payload = {
+  bikeConfig: BikeConfig;
+  totalPrice: number;
+};

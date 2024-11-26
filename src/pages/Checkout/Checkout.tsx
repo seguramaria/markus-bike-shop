@@ -1,11 +1,20 @@
+import { OrderModal } from "@components/layout/OrderModal/OrderModal";
 import styles from "./Checkout.module.css";
 import { Button } from "@components/ui/Button/Button";
 import { BikeConfigContext } from "@context/BikeConfigContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Checkout = () => {
-  const { bikeConfig, totalPrice, isFormValid } = useContext(BikeConfigContext);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const {
+    bikeConfig,
+    totalPrice,
+    isFormValid,
+    orderDetails,
+    handleSubmit,
+    handleReset,
+  } = useContext(BikeConfigContext);
 
   return (
     <div className={styles.container}>
@@ -56,8 +65,24 @@ export const Checkout = () => {
                 Edit
               </Button>
             </Link>
-            <Button onClick={() => console.log("PLace order")}>Submit</Button>
+            <Button
+              type="submit"
+              onClick={() => {
+                handleSubmit();
+                setIsModalOpen(true);
+              }}
+            >
+              Submit
+            </Button>
           </div>
+          <OrderModal
+            isOpen={isModalOpen}
+            onClose={() => {
+              handleReset();
+              setIsModalOpen(false);
+            }}
+            orderDetails={orderDetails}
+          />
         </>
       ) : (
         <div className={styles.container}>
