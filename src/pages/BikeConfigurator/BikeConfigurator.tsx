@@ -5,26 +5,26 @@ import { useContext } from "react";
 import { bikeData } from "@data/bikeData";
 import { BikeConfigContext } from "@context/BikeConfigContext";
 import { Link } from "react-router-dom";
+import {
+  isRimCompatible,
+  isWheelCompatible,
+} from "../../utils/incompatibilityUtil";
 
 export const BikeConfigurator = () => {
   const { bikeConfig, updateConfig, handleReset, isFormValid, totalPrice } =
     useContext(BikeConfigContext);
 
-  const wheelsWithOptionsDisabled = bikeData.wheels.map((wheel) => ({
+  const wheelsWithOptionsDisabled = bikeData.features.wheels.map((wheel) => ({
     ...wheel,
     disabled: bikeConfig.frameType
-      ? !bikeData.frames
-          .find((frame) => frame.type === bikeConfig.frameType)
-          ?.compatibleWheels.includes(wheel.type)
+      ? !isWheelCompatible(wheel.id, bikeConfig.frameType)
       : false,
   }));
 
-  const rimsWithOptionsDisabled = bikeData.rims.map((rim) => ({
+  const rimsWithOptionsDisabled = bikeData.features.rims.map((rim) => ({
     ...rim,
     disabled: bikeConfig.wheelType
-      ? !bikeData.wheels
-          .find((wheel) => wheel.type === bikeConfig.wheelType)
-          ?.compatibleRims.includes(rim.type)
+      ? !isRimCompatible(rim.id, bikeConfig.wheelType)
       : false,
   }));
 
@@ -44,8 +44,8 @@ export const BikeConfigurator = () => {
             title="Frame"
             select={{
               label: "Select Frame",
-              options: bikeData.frames.map((frame) => ({
-                value: frame.type,
+              options: bikeData.features.frames.map((frame) => ({
+                value: frame.variant,
                 label: frame.label,
               })),
               value: bikeConfig.frameType,
@@ -56,10 +56,13 @@ export const BikeConfigurator = () => {
               },
             }}
             button={{
-              options: bikeData.finishes.map((finish) => ({
-                value: finish.type,
-                label: finish.label,
-              })),
+              options:
+                bikeData.features.frames
+                  .find((frame) => frame.variant === bikeConfig.frameType)
+                  ?.finishes.map((finish) => ({
+                    value: finish.variant,
+                    label: finish.label,
+                  })) || [],
               value: bikeConfig.frameFinish,
               onSelect: (value) => updateConfig("frameFinish", value),
             }}
@@ -70,7 +73,7 @@ export const BikeConfigurator = () => {
             select={{
               label: "Select Wheel Type",
               options: wheelsWithOptionsDisabled.map((wheel) => ({
-                value: wheel.type,
+                value: wheel.variant,
                 label: wheel.label,
                 disabled: wheel.disabled,
               })),
@@ -82,7 +85,7 @@ export const BikeConfigurator = () => {
             }}
             radio={{
               options: rimsWithOptionsDisabled.map((rim) => ({
-                value: rim.type,
+                value: rim.rim_color,
                 label: rim.label,
                 disabled: rim.disabled,
               })),
@@ -94,8 +97,8 @@ export const BikeConfigurator = () => {
             title="Chain"
             select={{
               label: "Select Chain Type",
-              options: bikeData.chains.map((chain) => ({
-                value: chain.type,
+              options: bikeData.features.chains.map((chain) => ({
+                value: chain.variant,
                 label: chain.label,
               })),
               value: bikeConfig.chainType,

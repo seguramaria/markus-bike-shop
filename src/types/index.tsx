@@ -1,41 +1,41 @@
 type Finish = {
-  id: string;
-  type: string;
+  variant: string;
+  price: string;
   label: string;
-  price: { [key: string]: number };
 };
 
 type Wheel = {
-  id: string;
-  type: string;
+  id: number;
+  variant: string;
+  price: string;
   label: string;
-  price: number;
-  compatibleRims: string[];
 };
 
 type Rim = {
-  id: string;
-  type: string;
+  id: number;
+  rim_color: string;
   label: string;
-  price: number;
+  price: string;
 };
 
 type Chain = {
-  id: string;
-  type: string;
+  id: number;
+  variant: string;
+  price: string;
   label: string;
-  price: number;
 };
 
-type Frame = {
-  id: string;
-  type: string;
+export type Frame = {
+  id: number;
+  variant: string;
+  price: string;
   label: string;
-  price: number;
-  compatibleWheels: string[];
+  finishes: Finish[];
 };
 
-export type BikeData = {
+export type BikeFeatureType = "frames" | "wheels" | "rims" | "chains";
+
+export type BikeFeatures = {
   frames: Frame[];
   finishes: Finish[];
   wheels: Wheel[];

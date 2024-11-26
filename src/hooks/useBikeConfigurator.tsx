@@ -12,7 +12,7 @@ export const useBikeConfigurator = () => {
     chainType: "",
   });
 
-  const updateConfig = (field: string, value: string) => {
+  const updateConfig = (field: keyof BikeConfig, value: string) => {
     setBikeConfig((prev) => ({ ...prev, [field]: value }));
   };
 
@@ -26,29 +26,49 @@ export const useBikeConfigurator = () => {
     });
   };
 
+  const getFramePrice = (frameType: string): number => {
+    const frame = bikeData.features.frames.find((f) => f.variant === frameType);
+    return frame ? parseFloat(frame.price) : 0;
+  };
+
+  const getFinishPrice = (frameType: string, finishVariant: string): number => {
+    const frame = bikeData.features.frames.find((f) => f.variant === frameType);
+    const finish = frame?.finishes.find((f) => f.variant === finishVariant);
+    return finish ? parseFloat(finish.price) : 0;
+  };
+
+  const getWheelPrice = (wheelType: string): number => {
+    const wheel = bikeData.features.wheels.find((f) => f.variant === wheelType);
+    return wheel ? parseFloat(wheel.price) : 0;
+  };
+
+  const getRimPrice = (rimColor: string): number => {
+    const rim = bikeData.features.rims.find((r) => r.rim_color === rimColor);
+    return rim ? parseFloat(rim.price) : 0;
+  };
+
+  const getChainPrice = (chainType: string): number => {
+    const chain = bikeData.features.chains.find((f) => f.variant === chainType);
+    return chain ? parseFloat(chain.price) : 0;
+  };
+
   const totalPrice = useMemo(() => {
-    const framePrice =
-      bikeData.frames.find((frame) => frame.type === bikeConfig.frameType)
-        ?.price || 0;
-    const finishPrice =
-      bikeData.finishes.find((finish) => finish.type === bikeConfig.frameFinish)
-        ?.price[bikeConfig.frameType] || 0;
-    const wheelPrice =
-      bikeData.wheels.find((wheel) => wheel.type === bikeConfig.wheelType)
-        ?.price || 0;
-    const rimPrice =
-      bikeData.rims.find((rim) => rim.type === bikeConfig.rimColor)?.price || 0;
-    const chainPrice =
-      bikeData.chains.find((chain) => chain.type === bikeConfig.chainType)
-        ?.price || 0;
+    const framePrice = getFramePrice(bikeConfig.frameType);
+    const finishPrice = getFinishPrice(
+      bikeConfig.frameType,
+      bikeConfig.frameFinish
+    );
+    const wheelPrice = getWheelPrice(bikeConfig.wheelType);
+    const rimPrice = getRimPrice(bikeConfig.rimColor);
+    const chainPrice = getChainPrice(bikeConfig.chainType);
 
     return framePrice + finishPrice + wheelPrice + rimPrice + chainPrice;
   }, [bikeConfig]);
 
   const handleSubmit = () => {
-    const payload = {
+    const payload: Payload = {
       bikeConfig,
-      totalPrice,
+      totalPrice: totalPrice,
     };
     setOrderDetails(payload);
   };
